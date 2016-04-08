@@ -1,0 +1,10 @@
+{
+    "name": "hawok/mws-recommendations",
+    "type": "library",
+    "license": "Apache License",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
