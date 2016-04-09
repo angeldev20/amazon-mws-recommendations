@@ -672,8 +672,10 @@ class MWSRecommendationsSectionService_Client implements MWSRecommendationsSecti
      */
     protected function setSSLCurlOptions($ch)
     {
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        // Amazon HTTPS and PHP fix
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
     }
 
     /**
