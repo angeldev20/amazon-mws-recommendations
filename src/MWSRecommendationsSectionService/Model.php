@@ -242,7 +242,10 @@ abstract class MWSRecommendationsSectionService_Model
             } elseif (is_array($fieldAttrs['FieldValue'])) {
                 $valueArr = array();
                 foreach ($fieldAttrs['FieldValue'] as $item) {
-                    $valueArr[] = $item->toAssociativeArray();
+                    if (is_object($item)) {
+                        $valueArr[] = $item->toAssociativeArray();
+                    }
+                    $valueArr[] = $item;
                 }
                 $currentArr[$fieldName] = $valueArr;
             } else {
