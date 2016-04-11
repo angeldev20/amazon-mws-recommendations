@@ -229,6 +229,31 @@ abstract class MWSRecommendationsSectionService_Model
     }
 
     /**
+     * Convert model to Associative Array
+     * @return array
+     */
+    public function toAssociativeArray()
+    {
+        $arr = array();
+        foreach ($this->_fields as $fieldName => $fieldAttrs) {
+            $currentArr = array();
+            if (is_object($fieldAttrs['FieldValue'])) {
+                $currentArr[$fieldName] = $fieldAttrs['FieldValue']->toAssociativeArray();
+            } elseif (is_array($fieldAttrs['FieldValue'])) {
+                $valueArr = array();
+                foreach ($fieldAttrs['FieldValue'] as $item) {
+                    $valueArr[] = $item->toAssociativeArray();
+                }
+                $currentArr[$fieldName] = $valueArr;
+            } else {
+                $currentArr[$fieldName] = $fieldAttrs['FieldValue'];
+            }
+            $arr = array_merge($arr, $currentArr);
+        }
+        return $arr;
+    }
+
+    /**
      * Convert to query parameters suitable for POSTing.
      * @return array of query parameters
      */
