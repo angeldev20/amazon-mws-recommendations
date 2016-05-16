@@ -1,5 +1,5 @@
 {
-    "name": "hawok/mws-recommendations",
+    "name": "hawok/amazon-mws-recommendations",
     "type": "library",
     "license": "Apache License",
     "autoload": {
