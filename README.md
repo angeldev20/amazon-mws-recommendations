@@ -9,4 +9,4 @@ The Recommendations API section of Amazon MWS enables you to programmatically re
 - Global Selling: Recommendations for expanding your products to more regions and marketplaces.
 - Advertising: Recommendations for advertising your products and for using the sponsored products program.
 
-All additional information must finded here: http://docs.developer.amazonservices.com/en_US/recommendations/
+All additional information can be found there: http://docs.developer.amazonservices.com/en_US/recommendations/
